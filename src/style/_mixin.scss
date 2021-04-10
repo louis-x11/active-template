@@ -1,0 +1,34 @@
+@mixin clearfix() {
+  /* 清除浮动 */
+  &::after {
+    content: "";
+    display: table;
+    clear:   both;
+  }
+}
+
+
+@mixin no_operating {
+  /*
+    禁止用户操作， 选择， 拖动
+  */
+  user-select:       none;
+  -webkit-user-drag: none;
+}
+
+@mixin textOmit($line) {
+  /*
+     多行省略操作
+     $line : 具体的行数
+   */
+  display:            -webkit-box;
+  overflow:           hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+
+@mixin inverted_image($distance) {
+  -webkit-box-reflect: below $distance /* 倒影 */
+  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.2))); /* 文字渐变色 */
+}
